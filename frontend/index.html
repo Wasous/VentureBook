@@ -5,60 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación Web Básica</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1>Bienvenido a Mi Aplicación Web</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#features">Características</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Bienvenido a Mi Aplicación Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#features">Características</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section id="intro">
-            <h2>Introducción</h2>
-            <p>Esta es una aplicación web básica para comenzar a desarrollar y experimentar con nuevas funcionalidades.
-            </p>
-            <button id="cta-button">Haga clic aquí para una acción</button>
+            <div class="container">
+                <h2>Introducción</h2>
+                <p>Esta es una aplicación web básica para comenzar a desarrollar y experimentar con nuevas
+                    funcionalidades.</p>
+                <input type="email" placeholder="Ingrese su correo electrónico" id="email-input">
+                <button id="cta-button">Comenzar Ahora</button>
+                <p class="small-text">Sí, es gratis. Puede actualizar en cualquier momento.</p>
+            </div>
         </section>
 
         <section id="features">
-            <h2>Características</h2>
-            <ul>
-                <li>Interfaz amigable</li>
-                <li>Fácil de personalizar</li>
-                <li>Basado en HTML, CSS y JavaScript</li>
-            </ul>
+            <div class="container">
+                <h2>Características</h2>
+                <ul>
+                    <li>Interfaz amigable</li>
+                    <li>Fácil de personalizar</li>
+                    <li>Basado en HTML, CSS y JavaScript</li>
+                </ul>
+            </div>
         </section>
 
         <section id="contact">
-            <h2>Contacto</h2>
-            <form id="contact-form">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="container">
+                <h2>Contacto</h2>
+                <form id="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
 
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
 
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+        <div class="container">
+            <p>&copy; 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
