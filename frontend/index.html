@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación Web Básica</title>
+    <title>Consultoría Power BI</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,12 @@
 <body>
     <header>
         <div class="container">
-            <h1>Bienvenido a Mi Aplicación Web</h1>
+            <h1>Consultoría en Power BI</h1>
             <nav>
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#features">Características</a></li>
+                    <li><a href="#about">Sobre mí</a></li>
+                    <li><a href="#services">Servicios</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
@@ -26,25 +27,43 @@
     </header>
 
     <main>
-        <section id="intro">
+        <section id="hero">
             <div class="container">
-                <h2>Introducción</h2>
-                <p>Esta es una aplicación web básica para comenzar a desarrollar y experimentar con nuevas
-                    funcionalidades.</p>
-                <input type="email" placeholder="Ingrese su correo electrónico" id="email-input">
-                <button id="cta-button">Comenzar Ahora</button>
-                <p class="small-text">Sí, es gratis. Puede actualizar en cualquier momento.</p>
+                <h2>La inteligencia de datos que tu empresa necesita</h2>
+                <p>Transforma tus datos en decisiones efectivas.</p>
+                <button id="cta-button">Reserva una consulta ahora</button>
             </div>
         </section>
 
-        <section id="features">
+        <section id="about">
+            <div class="container about-section">
+                <img src="./assets/images/about-me.jpg" alt="Sobre mí">
+                <div>
+                    <h2>Sobre mí</h2>
+                    <p>Como consultor especializado en Power BI, ayudo a pequeñas y medianas empresas a tomar decisiones
+                        informadas mediante el uso de dashboards interactivos y análisis de datos personalizados.</p>
+                    <button id="learn-more">Saber más</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
             <div class="container">
-                <h2>Características</h2>
-                <ul>
-                    <li>Interfaz amigable</li>
-                    <li>Fácil de personalizar</li>
-                    <li>Basado en HTML, CSS y JavaScript</li>
-                </ul>
+                <h2>Cómo puedo ayudarte</h2>
+                <div id="carousel" class="carousel">
+                    <div class="carousel-item">
+                        <h3>Dashboards Personalizados</h3>
+                        <p>Creación de dashboards interactivos adaptados a las necesidades de tu negocio.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Entrenamiento en Power BI</h3>
+                        <p>Capacitación para tu equipo en el uso efectivo de Power BI.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Consultoría Estratégica</h3>
+                        <p>Orientación para la implementación de estrategias de inteligencia de negocio.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -58,6 +77,9 @@
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" id="email" name="email" required>
 
+                    <label for="subject">Asunto:</label>
+                    <input type="text" id="subject" name="subject" required>
+
                     <label for="message">Mensaje:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
 
@@ -69,7 +91,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mi Aplicación Web. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Consultoría Power BI. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">YouTube</a>
+            </div>
         </div>
     </footer>
 
