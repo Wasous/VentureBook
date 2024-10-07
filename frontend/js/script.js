@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let interval;
     let progressPaused = false;
     let progressBarWidth = 0;
+    let startTime;
 
     function showNextItem() {
         currentIndex = (currentIndex + 1) % carouselItems.length;
@@ -33,25 +34,40 @@ document.addEventListener("DOMContentLoaded", function () {
         progressBarWidth = 0;
         progressBar.style.width = '0';
         setTimeout(() => {
-            progressBar.style.transition = 'width 8s cubic-bezier(0.42, 0, 0.58, 1)';
+            progressBar.style.transition = 'width 8s linear';
             progressBar.style.width = '100%';
+            startTime = Date.now();
         }, 10);
     }
 
     function startCarousel() {
-        interval = setInterval(showNextItem, 8000);
+        interval = setInterval(() => {
+            if (!progressPaused) {
+                showNextItem();
+            }
+        }, 8000);
         progressPaused = false;
-        progressBar.style.transition = `width ${8 - (progressBarWidth / 100) * 8}s cubic-bezier(0.42, 0, 0.58, 1)`;
-        progressBar.style.width = `${100 - progressBarWidth}%`;
+        startTime = Date.now() - (progressBarWidth / 100) * 8000;
+        requestAnimationFrame(updateProgressBar);
     }
 
     function stopCarousel() {
-        clearInterval(interval);
         progressPaused = true;
-        const computedStyle = window.getComputedStyle(progressBar);
-        progressBarWidth = parseFloat(computedStyle.width) / progressBar.parentElement.clientWidth * 100;
+        const elapsedTime = Date.now() - startTime;
+        progressBarWidth = (elapsedTime / 8000) * 100;
         progressBar.style.transition = 'none';
         progressBar.style.width = `${progressBarWidth}%`;
+    }
+
+    function updateProgressBar() {
+        if (!progressPaused) {
+            const elapsedTime = Date.now() - startTime;
+            progressBarWidth = (elapsedTime / 8000) * 100;
+            progressBar.style.width = `${progressBarWidth}%`;
+            if (progressBarWidth < 100) {
+                requestAnimationFrame(updateProgressBar);
+            }
+        }
     }
 
     nextBtn.addEventListener("click", () => {
@@ -68,7 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     carouselItems.forEach((item) => {
         item.addEventListener("mouseenter", stopCarousel);
-        item.addEventListener("mouseleave", startCarousel);
+        item.addEventListener("mouseleave", () => {
+            progressPaused = false;
+            startTime = Date.now() - (progressBarWidth / 100) * 8000;
+            requestAnimationFrame(updateProgressBar);
+        });
     });
 
     startCarousel();

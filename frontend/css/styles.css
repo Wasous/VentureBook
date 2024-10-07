@@ -107,12 +107,9 @@ nav ul li a {
     border: none;
     padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
     font-weight: bold;
     font-size: 1.5em;
     z-index: 10;
-    height: 40px;
-    width: 40px;
 }
 
 #services {
@@ -149,7 +146,7 @@ nav ul li a {
     height: 100%;
     background-color: #0073e6;
     width: 0;
-    transition: width 3s linear;
+    transition: width 8s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 button {
@@ -200,4 +197,72 @@ footer {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+/* Responsive CSS adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-section img {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    .carousel-item {
+        padding: 20px;
+    }
+
+    #prev-btn,
+    #next-btn {
+        height: 30px;
+        width: 30px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h2 {
+        font-size: 1.5em;
+    }
+
+    #hero p {
+        font-size: 0.9em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    #prev-btn,
+    #next-btn {
+        height: 25px;
+        width: 25px;
+        font-size: 1em;
+    }
+
+    .carousel-controls {
+        gap: 10px;
+    }
 }
