@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultoría Power BI</title>
+    <script src="./js/theme-toggle.js"></script>
+    <script src="./js/script.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +25,7 @@
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
             </nav>
+            <button id="theme-toggle" class="theme-toggle-button">🌓</button>
         </div>
     </header>
 
@@ -37,7 +40,6 @@
 
         <section id="about">
             <div class="container about-section">
-                <img src="./assets/images/about-me.jpg" alt="Sobre mí">
                 <div>
                     <h2>Sobre mí</h2>
                     <p>Como consultor especializado en Power BI, ayudo a pequeñas y medianas empresas a tomar decisiones
@@ -50,24 +52,17 @@
         <section id="services">
             <div class="container">
                 <h2>Cómo puedo ayudarte</h2>
-                <div id="carousel" class="carousel">
-                    <div class="carousel-item">
-                        <h3>Dashboards Personalizados</h3>
-                        <p>Creación de dashboards interactivos adaptados a las necesidades de tu negocio.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Entrenamiento en Power BI</h3>
-                        <p>Capacitación para tu equipo en el uso efectivo de Power BI.</p>
-                    </div>
-                    <div class="carousel-item">
-                        <h3>Consultoría Estratégica</h3>
-                        <p>Orientación para la implementación de estrategias de inteligencia de negocio.</p>
-                    </div>
+                <div class="service-item">
+                    <h3>Dashboards Personalizados</h3>
+                    <p>Creación de dashboards interactivos adaptados a las necesidades de tu negocio.</p>
                 </div>
-                <div class="carousel-controls">
-                    <button id="prev-btn">&#10094;</button>
-                    <div class="progress-bar" id="progress-bar"></div>
-                    <button id="next-btn">&#10095;</button>
+                <div class="service-item">
+                    <h3>Entrenamiento en Power BI</h3>
+                    <p>Capacitación para tu equipo en el uso efectivo de Power BI.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Consultoría Estratégica</h3>
+                    <p>Orientación para la implementación de estrategias de inteligencia de negocio.</p>
                 </div>
             </div>
         </section>
@@ -104,8 +99,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="./js/script.js"></script>
 </body>
 
 </html>
