@@ -1,42 +1,46 @@
 /* Definición de Variables para Temas */
 :root {
-    --bg-color: #ffffff;
-    --text-color: #1c1c1c;
-    --header-bg-color: #f0f0f0;
-    --header-text-color: #007a8a;
-    --nav-link-color: #1c1c1c;
-    --hero-text-color: #ffffff;
-    --service-item-bg: #f8f8f8;
-    --button-bg-color: #00bcd4;
-    --button-hover-bg-color: #0097a7;
-    --input-bg-color: #ffffff;
-    --input-border-color: #ccc;
-    --footer-bg-color: #f0f0f0;
-    --footer-text-color: #1c1c1c;
-    --social-link-color: #00bcd4;
-    --theme-toggle-bg: #00bcd4;
-    --theme-toggle-hover-bg: #0097a7;
-    --theme-toggle-color: #fff;
+    --bg-color: #E8E6E3;
+    --text-color: #0A1128;
+    --header-bg-color: #FEFCFB;
+    --header-text-color: #0A1128;
+    --nav-link-color: #0A1128;
+    --hero-bg-color-start: #001F54;
+    --hero-bg-color-end: #034078;
+    --hero-text-color: #FEFCFB;
+    --service-item-bg: #FFFFFF;
+    --button-bg-color: #1282A2;
+    --button-hover-bg-color: #001F54;
+    --input-bg-color: #FFFFFF;
+    --input-border-color: #CCCCCC;
+    --footer-bg-color: #FEFCFB;
+    --footer-text-color: #0A1128;
+    --social-link-color: #1282A2;
+    --theme-toggle-bg: #1282A2;
+    --theme-toggle-hover-bg: #001F54;
+    --theme-toggle-color: #FFFFFF;
 }
 
 .dark-theme {
-    --bg-color: #1c1c1c;
-    --text-color: #f0f0f0;
-    --header-bg-color: #2a2a2a;
-    --header-text-color: #00bcd4;
-    --nav-link-color: #f0f0f0;
-    --hero-text-color: #ffffff;
-    --service-item-bg: #2a2a2a;
-    --button-bg-color: #00bcd4;
-    --button-hover-bg-color: #0097a7;
-    --input-bg-color: #333;
-    --input-border-color: #444;
-    --footer-bg-color: #2a2a2a;
-    --footer-text-color: #f0f0f0;
-    --social-link-color: #00bcd4;
-    --theme-toggle-bg: #00bcd4;
-    --theme-toggle-hover-bg: #0097a7;
-    --theme-toggle-color: #fff;
+    --bg-color: #1A2436;
+    --text-color: #FEFCFB;
+    --header-bg-color: #001F54;
+    --header-text-color: #FEFCFB;
+    --nav-link-color: #FEFCFB;
+    --hero-bg-color-start: #001F54;
+    --hero-bg-color-end: #034078;
+    --hero-text-color: #FEFCFB;
+    --service-item-bg: #FFFFFF;
+    --button-bg-color: #034078;
+    --button-hover-bg-color: #1282A2;
+    --input-bg-color: #1B1B1B;
+    --input-border-color: #444444;
+    --footer-bg-color: #001F54;
+    --footer-text-color: #FEFCFB;
+    --social-link-color: #1282A2;
+    --theme-toggle-bg: #034078;
+    --theme-toggle-hover-bg: #1282A2;
+    --theme-toggle-color: #FFFFFF;
 }
 
 /* Estilos Utilizando Variables */
@@ -52,14 +56,14 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 header {
     background-color: var(--header-bg-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    padding: 20px 0;
+    padding: 5px 0;
     text-align: center;
+    z-index: 999;
     position: relative;
 }
 
@@ -83,34 +87,23 @@ nav ul li a {
 }
 
 #hero {
-    background-image: url('../assets/images/hero-background.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: var(--hero-text-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background:
+        linear-gradient(135deg, var(--hero-bg-color-start) 0%, var(--hero-bg-color-end) 100%);
     text-align: center;
-    padding: 100px 0;
+    padding: 150px 0;
+    color: var(--hero-text-color);
 }
 
-.about-section {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.about-section img {
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.service-item {
-    background: var(--service-item-bg);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+#hero h2 {
+    font-size: 3em;
+    font-weight: 700;
     margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
 }
 
 button {
@@ -119,8 +112,10 @@ button {
     border: none;
     padding: 15px 30px;
     cursor: pointer;
-    border-radius: 25px;
-    font-weight: 500;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -131,10 +126,25 @@ button:hover {
     margin-top: 20px;
 }
 
+.service-item {
+    background-color: var(--service-item-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.about-section img {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
 .theme-toggle-button {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 10px;
+    z-index: 1000;
     background-color: var(--theme-toggle-bg);
     color: var(--theme-toggle-color);
     border: none;
@@ -142,7 +152,7 @@ button:hover {
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .theme-toggle-button:hover {
@@ -152,9 +162,9 @@ button:hover {
 input[type="email"],
 input[type="text"],
 textarea {
-    padding: 10px;
+    padding: 15px;
     border: 1px solid var(--input-border-color);
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
     width: 100%;
     background-color: var(--input-bg-color);
@@ -165,18 +175,19 @@ footer {
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    padding: 40px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .social-links {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .social-links a {
-    margin: 0 10px;
+    margin: 0 15px;
     color: var(--social-link-color);
     text-decoration: none;
+    font-weight: 500;
 }
 
 .social-links a:hover {
@@ -186,7 +197,7 @@ footer {
 /* Responsive CSS adjustments */
 @media (max-width: 768px) {
     .container {
-        padding: 0 10px;
+        padding: 20px;
     }
 
     .about-section {
@@ -206,25 +217,40 @@ footer {
     }
 
     #hero h2 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+
+    #contact-form {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #hero h2 {
         font-size: 2em;
     }
 
     #hero p {
         font-size: 1em;
     }
-}
-
-@media (max-width: 480px) {
-    #hero h2 {
-        font-size: 1.5em;
-    }
-
-    #hero p {
-        font-size: 0.9em;
-    }
 
     button {
         padding: 10px 20px;
-        font-size: 0.9em;
+        font-size: 1em;
     }
 }
