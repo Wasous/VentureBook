@@ -1,45 +1,43 @@
 /* Definición de Variables para Temas */
 :root {
-    --bg-color: #E8E6E3;
+    --bg-color: #F0F4F8;
     --text-color: #0A1128;
-    --header-bg-color: #FEFCFB;
+    --header-bg-color: #F0F4F8;
     --header-text-color: #0A1128;
     --nav-link-color: #0A1128;
-    --hero-bg-color-start: #001F54;
-    --hero-bg-color-end: #034078;
-    --hero-text-color: #FEFCFB;
+    --hero-text-color: #FFFFFF;
     --service-item-bg: #FFFFFF;
-    --button-bg-color: #1282A2;
-    --button-hover-bg-color: #001F54;
+    --button-bg-color: #0077BE;
+    --button-text-color: #0077BE;
+    --button-hover-bg-color: #005F93;
     --input-bg-color: #FFFFFF;
     --input-border-color: #CCCCCC;
-    --footer-bg-color: #FEFCFB;
+    --footer-bg-color: #F0F4F8;
     --footer-text-color: #0A1128;
-    --social-link-color: #1282A2;
-    --theme-toggle-bg: #1282A2;
-    --theme-toggle-hover-bg: #001F54;
+    --social-link-color: #0077BE;
+    --theme-toggle-bg: #0077BE;
+    --theme-toggle-hover-bg: #005F93;
     --theme-toggle-color: #FFFFFF;
 }
 
 .dark-theme {
-    --bg-color: #1A2436;
-    --text-color: #FEFCFB;
-    --header-bg-color: #001F54;
-    --header-text-color: #FEFCFB;
-    --nav-link-color: #FEFCFB;
-    --hero-bg-color-start: #001F54;
-    --hero-bg-color-end: #034078;
-    --hero-text-color: #FEFCFB;
-    --service-item-bg: #FFFFFF;
-    --button-bg-color: #034078;
-    --button-hover-bg-color: #1282A2;
-    --input-bg-color: #1B1B1B;
-    --input-border-color: #444444;
-    --footer-bg-color: #001F54;
-    --footer-text-color: #FEFCFB;
-    --social-link-color: #1282A2;
-    --theme-toggle-bg: #034078;
-    --theme-toggle-hover-bg: #1282A2;
+    --bg-color: #1F2933;
+    --text-color: #E0E6ED;
+    --header-bg-color: #1F2933;
+    --header-text-color: #E0E6ED;
+    --nav-link-color: #E0E6ED;
+    --hero-text-color: #FFFFFF;
+    --service-item-bg: #2D3748;
+    --button-bg-color: #00A86B;
+    --button-hover-bg-color: #007F56;
+    --button-text-color: #ffffff;
+    --input-bg-color: #2D3748;
+    --input-border-color: #555555;
+    --footer-bg-color: #1F2933;
+    --footer-text-color: #E0E6ED;
+    --social-link-color: #00A86B;
+    --theme-toggle-bg: #00A86B;
+    --theme-toggle-hover-bg: #007F56;
     --theme-toggle-color: #FFFFFF;
 }
 
@@ -61,15 +59,31 @@ body {
 
 header {
     background-color: var(--header-bg-color);
-    padding: 5px 0;
-    text-align: center;
-    z-index: 999;
+    padding: 15px 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
     position: relative;
 }
 
-header h1 {
+h1 {
+    font-size: 1.8em;
     font-weight: 700;
     color: var(--header-text-color);
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+nav {
+    margin-left: auto;
 }
 
 nav ul {
@@ -89,40 +103,51 @@ nav ul li a {
 #hero {
     border: 1px solid rgba(255, 255, 255, 0.3);
     background:
-        linear-gradient(135deg, var(--hero-bg-color-start) 0%, var(--hero-bg-color-end) 100%);
+        radial-gradient(circle at 30% 30%, #0077be 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, #00a86b 0%, transparent 40%),
+        linear-gradient(135deg, #000033 0%, #000066 50%, #003366 100%);
+    background-blend-mode: screen;
     text-align: center;
-    padding: 150px 0;
+    padding: 50px 0;
     color: var(--hero-text-color);
 }
 
 #hero h2 {
-    font-size: 3em;
+    font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #hero p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
-    background-color: var(--button-bg-color);
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
+    background-color: transparent;
+    color: var(--button-text-color);
+    border: 2px solid #005F93;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     font-weight: 700;
     margin-bottom: 30px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
 }
 
 button:hover {
-    background-color: var(--button-hover-bg-color);
+    background-color: #005F93;
+    color: #FFFFFF;
+    border-color: #005F93;
 }
 
 #cta-button {
+    color: #FFFFFF;
     margin-top: 20px;
 }
 
@@ -141,18 +166,12 @@ button:hover {
 }
 
 .theme-toggle-button {
-    position: fixed;
-    top: 20px;
-    right: 10px;
-    z-index: 1000;
-    background-color: var(--theme-toggle-bg);
-    color: var(--theme-toggle-color);
+    background: none;
     border: none;
-    padding: 10px;
-    border-radius: 50%;
+    font-size: 1.8em;
     cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    margin-left: auto;
 }
 
 .theme-toggle-button:hover {
